@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyboard</title>
+</head>
+<body>
+<script>
+    function detectmob() { 
+        if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+        ){
+            return 2;
+        }
+
+        else if(navigator.userAgent.match(/iPhone/i)){
+            return 3;
+        }
+
+        else if(navigator.userAgent.match(/iPad/i)){
+            return 4;
+        }
+
+        else {
+            return false;
+        }
+        }
+
+
+        if (detectmob() == 2){
+            alert('溫馨小提示:\n單純用手機解不開');
+        }
+        else if (detectmob() == 3){
+            alert('溫馨小提示:\n單純用手機解不開\n(你正在用iPhone對吧)');
+        }
+        else if(detectmob() == 4){
+            alert('溫馨小提示:\n單純用手機解不開\n(你正在用iPad對吧)');
+        }
+        else{
+            alert('你好乖用電腦\n用電腦應該會是最好解的');
+        }
+
+
+    function cond(){
+        var a = document.getElementById("l1").value;
+        
+
+        if (a=="猴子豬"){
+            window.open("https://yx75.weebly.com", "");
+            document.write("<p>correct!🙉" + "web link".link("https://yx75.weebly.com") + "</p>");
+        }
+
+        else{
+            alert('wrong🙈');
+        }
+    }
+
+    function clue(){
+        alert('開電腦解的開\n但不開機的電腦搭配手機也解的開\n(我真的是大善人提示好多)');
+    }
+
+    </script>
+    <input type="text" placeholder="submit your answer~" id="l1">
+    <button type="button" onclick="cond()">submit</button>
+    <p>clue:c.6y35j </p>
+    <p>(如果直接按提示就不好玩了啦😥)</p>
+    <button type="button" onclick="clue()">我是傻子猴我解不開需要提示</button>
+</body>
+</html>
